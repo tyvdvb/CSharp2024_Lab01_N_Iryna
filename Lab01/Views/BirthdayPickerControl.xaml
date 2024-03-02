@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="KMA.ProgrammingInCSharp2024.Views.BirthdayPickerControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KMA.ProgrammingInCSharp2024.Views"
+    
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#FFB3BAC1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox      Name="TbPickDate" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="0 30 0 0" FontWeight="Bold" FontSize="17" Text="Pick your birthday date" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <DatePicker   SelectedDate="{Binding BirthDate, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="50 10" FirstDayOfWeek="Monday" IsTodayHighlighted="True"/>
+        <Button       Name="BSubmit" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Stretch"  Margin="5" Padding="5"  Content="Submit "  Background="#FF5B7E91" Command="{Binding SubmitCommand}"/>
+        <TextBox      Name="TbAge" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="1" HorizontalAlignment="Right"  VerticalAlignment="Center" Margin="10" FontWeight="Bold" FontSize="14" Text="Your age :" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <TextBlock    Text="{Binding Age, Mode=oneWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left"  VerticalAlignment="Stretch" Padding="10" FontWeight="Bold" FontSize="17" TextAlignment="Center" />
+		<TextBox      Name="TbWesternZodiac" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="1" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="10" FontWeight="Bold" FontSize="14" Text="Your Western Zodiac:" Background="{x:Null}" BorderBrush="{x:Null}"/>
+		<TextBox      Name="TbChineseZodiac" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="1" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="10" FontWeight="Bold" FontSize="14" Text="Your Chinese Zodiac:" Background="{x:Null}" BorderBrush="{x:Null}"/>
+		<TextBlock    Text="{Binding WesternZodiac, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center"  VerticalAlignment="Stretch" Padding="10" TextAlignment="Center" />
+        <TextBlock    Text="{Binding ChineseZodiac, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Stretch" Padding="10" TextAlignment="Center" />
+
+
+    </Grid>
+</UserControl>
